@@ -71,7 +71,7 @@ again:
     }
 end:
     endLogo();
-  
+}
 
 void startLogo(){
     printf ("\n\n");
@@ -84,81 +84,77 @@ void startLogo(){
   printf ("\t\t    |        |      |       |        ______|____|______   \n");
   printf ("\t\t    (========)     ===========       \\________________/    \n");
 }
+
 void endLogo(){
     printf ("\n\n\n");
-  printf ("\t\t\t\t          __  __           \n");
-  printf ("\t\t\t\t         |  ||  |           \n");
-  printf ("\t\t\t\t         |  ||  |           \n");
-  printf ("\t\t\t\t        /   ||   \\         \n");
-  printf ("\t\t\t\t       /    ||    \\         \n");
-  printf ("\t\t\t\t      |     ||     |         \n");
-  printf ("\t\t\t\t      |     ||     |         \n");
-  printf ("\t\t\t\t      |     ||     |         \n");
-  printf ("\t\t\t\t      /     /\\     \\            \n");
-  printf ("\t\t\t\t      =====    =====            \n");
-  printf ("\t\t\t\t    ======      ======            \n\n");
-  
-  printf ("\t\t\t    =======  =   =    =    =     =  =   =  \n");
-  printf ("\t\t\t       =     =   =   = =   = =   =  =  =   \n");
-  printf ("\t\t\t       =     =====  = = =  =  =  =  = =    \n");
-  printf ("\t\t\t       =     =   =  =   =  =   = =  =  =   \n");
-  printf ("\t\t\t       =     =   =  =   =  =     =  =   =  \n\n");
-  
-  printf ("\t\t\t\t    =    =  ====   =   =            \n");
-  printf ("\t\t\t\t     =  =  =    =  =   =            \n");
-  printf ("\t\t\t\t       =   =    =  =   =            \n");
-  printf ("\t\t\t\t      =    =    =  =   =            \n");
-  printf ("\t\t\t\t     =      ====    ===            \n");
-}
+    printf ("\t\t\t\t          __  __           \n");
+    printf ("\t\t\t\t         |  ||  |           \n");
+    printf ("\t\t\t\t         |  ||  |           \n");
+    printf ("\t\t\t\t        /   ||   \\         \n");
+    printf ("\t\t\t\t       /    ||    \\         \n");
+    printf ("\t\t\t\t      |     ||     |         \n");
+    printf ("\t\t\t\t      |     ||     |         \n");
+    printf ("\t\t\t\t      |     ||     |         \n");
+    printf ("\t\t\t\t      /     /\\     \\            \n");
+    printf ("\t\t\t\t      =====    =====            \n");
+    printf ("\t\t\t\t    ======      ======            \n\n");
+    
+    printf ("\t\t\t████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗\n");
+    printf ("\t\t\t╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝\n");
+    printf ("\t\t\t   ██║   ███████║███████║██╔██╗ ██║█████╔╝ \n");
+    printf ("\t\t\t   ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ \n");
+    printf ("\t\t\t   ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗\n");  
+    printf ("\t\t\t   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝\n\n");
+    printf ("\t\t\t        ██╗   ██╗ ██████╗ ██╗   ██╗        \n");
+    printf ("\t\t\t        ╚██╗ ██╔╝██╔═══██╗██║   ██║        \n");
+    printf ("\t\t\t         ╚████╔╝ ██║   ██║██║   ██║        \n");
+    printf ("\t\t\t          ╚██╔╝  ██║   ██║██║   ██║        \n");
+    printf ("\t\t\t           ██║   ╚██████╔╝╚██████╔╝        \n");
+    printf ("\t\t\t           ╚═╝    ╚═════╝  ╚═════╝         \n");
 }
 
 int resourceManager (int option, int addon)
 {
-  // Resources availabe:
-  static int totalMilk = 400;
-  static int totalSugar = 400;
-  static int coffeePowder = 400;
-  static int teaPowder = 400;
-  static int chocolate = 400;
-  // int totalMilk = 20000; // 20000 ml 
-  // int totalSugar = 10000; // 5000g 
-  // int coffeePowder = 10000; // 5000 g
-  // int teaPowder = 10000; // 5000 g
-  // int chocolate = 10000; // 2000 g
-  int milk[10] = { 0, 100, 150, 100, 200, 150, 150, 100, 100, 150 };
-  int sugar[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
-  int other[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
-  if (addon == 1)
-    {
+    // Resources availabe:
+    static int totalMilk = 400;
+    static int totalSugar = 400;
+    static int coffeePowder = 400;
+    static int teaPowder = 400;
+    static int chocolate = 400;
+    // int totalMilk = 20000; // 20000 ml 
+    // int totalSugar = 10000; // 5000g 
+    // int coffeePowder = 10000; // 5000 g
+    // int teaPowder = 10000; // 5000 g
+    // int chocolate = 10000; // 2000 g
+    int milk[10] = { 0, 100, 150, 100, 200, 150, 150, 100, 100, 150 };
+    int sugar[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
+    int other[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
+    if (addon == 1) {
       totalSugar = totalSugar - 5 - sugar[option];
     }
-  else
-    {
+    else {
       totalSugar = totalSugar - sugar[option];
     }
-  totalMilk = totalMilk - milk[option];
-  teaPowder = teaPowder - other[option];
-  coffeePowder = teaPowder;
-  chocolate = teaPowder;
-  printf ("\nmilk: %d\n", totalMilk);
-  printf ("sugar: %d\n", totalSugar);
-  printf ("other: %d\n", teaPowder);
-  if (totalMilk >= 0 && teaPowder >= 0 && coffeePowder >= 0 && chocolate >= 0
-      && totalSugar > 0)
-    return 1;
-  else
-    return 0;
-
+    totalMilk = totalMilk - milk[option];
+    teaPowder = teaPowder - other[option];
+    coffeePowder = teaPowder;
+    chocolate = teaPowder;
+    printf ("\nmilk: %d\n", totalMilk);
+    printf ("sugar: %d\n", totalSugar);
+    printf ("other: %d\n", teaPowder);
+    if (totalMilk >= 0 && teaPowder >= 0 && coffeePowder >= 0 && chocolate >= 0
+        && totalSugar > 0)
+        return 1;
+    else
+        return 0;
 }
 
-int
-calculate (int option, int addon)
+int calculate (int option, int addon)
 {
-  int prices[10] = { 0, 20, 30, 30, 50, 50, 45, 15, 20, 45 }, bill = 0;
-  if (addon == 1)
-    {
+    int prices[10] = { 0, 20, 30, 30, 50, 50, 45, 15, 20, 45 }, bill = 0;
+    if (addon == 1) {
       bill += 5;
     }
-  bill += prices[option];
-  return bill;
+    bill += prices[option];
+    return bill;
 }
