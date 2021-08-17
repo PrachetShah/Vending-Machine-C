@@ -18,4 +18,5 @@ Please make sure to update tests as appropriate.
 
 ## Contributors
 <a href="https://github.com/PrachetShah"><b>Prachet Shah</b></a>
+<br>
 <a href="https://github.com/coder-jkb"><b>Jay Bhanushali</b></a>
