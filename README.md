@@ -17,6 +17,11 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## Contributors
+<ul>
+  <li>
 <a href="https://github.com/PrachetShah"><b>Prachet Shah</b></a>
 <br>
+  </li>
+  <li>
 <a href="https://github.com/coder-jkb"><b>Jay Bhanushali</b></a>
+  </li>
