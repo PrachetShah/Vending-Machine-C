@@ -55,7 +55,7 @@ again:
       totalMoney = calculate (option, addon);
 
       int payment, extra;
-      printf ("\n\t\t\tBill:\n\t\t\tEnetr Rs. %d : ", totalMoney);
+      printf ("\n\t\t\tBill:\n\t\t\tEnter Rs. %d : ", totalMoney);
       scanf("%d",&payment);
       if (payment > totalMoney)
         printf("\n\t\t\tPlease collect your change : Rs. %d",payment-totalMoney);
@@ -111,18 +111,30 @@ void endLogo(){
     printf ("\t\t\t\t    ======      ======            \n\n\n");
     
 
-    printf ("\t\t\t\t╔╦╗┬ ┬┌─┐┌┐┌┬┌─\n");
-    printf ("\t\t\t\t ║ ├─┤├─┤│││├┴┐\n");
-    printf ("\t\t\t\t ╩ ┴ ┴┴ ┴┘└┘┴ ┴ \n\n");
-    printf ("\t\t\t\t  ╦ ╦┌─┐┬ ┬   \n");
-    printf ("\t\t\t\t  ╚╦╝│ ││ │ \n");
-    printf ("\t\t\t\t   ╩ └─┘└─┘   \n\n");
-    printf ("\t\t\t\t  ╦  ╦┬┌─┐┬┌┬┐  \n");
-    printf ("\t\t\t\t  ╚╗╔╝│└─┐│ │   \n");
-    printf ("\t\t\t\t   ╚╝ ┴└─┘┴ ┴    \n");
-    printf ("\t\t\t\t  ╔═╗┌─┐┌─┐┬┌┐┌  ┬\n");
-    printf ("\t\t\t\t  ╠═╣│ ┬├─┤││││  │\n");
-    printf ("\t\t\t\t  ╩ ╩└─┘┴ ┴┴┘└┘  o\n");
+    // printf ("\t\t\t\t╔╦╗┬ ┬┌─┐┌┐┌┬┌─\n");
+    // printf ("\t\t\t\t ║ ├─┤├─┤│││├┴┐\n");
+    // printf ("\t\t\t\t ╩ ┴ ┴┴ ┴┘└┘┴ ┴ \n\n");
+    // printf ("\t\t\t\t  ╦ ╦┌─┐┬ ┬   \n");
+    // printf ("\t\t\t\t  ╚╦╝│ ││ │ \n");
+    // printf ("\t\t\t\t   ╩ └─┘└─┘   \n\n");
+    // printf ("\t\t\t\t  ╦  ╦┬┌─┐┬┌┬┐  \n");
+    // printf ("\t\t\t\t  ╚╗╔╝│└─┐│ │   \n");
+    // printf ("\t\t\t\t   ╚╝ ┴└─┘┴ ┴    \n");
+    // printf ("\t\t\t\t  ╔═╗┌─┐┌─┐┬┌┐┌  ┬\n");
+    // printf ("\t\t\t\t  ╠═╣│ ┬├─┤││││  │\n");
+    // printf ("\t\t\t\t  ╩ ╩└─┘┴ ┴┴┘└┘  o\n");
+
+    printf ("\t\t\t    #######  #   #    #    #     #  #   #  \n");
+    printf ("\t\t\t       #     #   #   # #   # #   #  #  #   \n");
+    printf ("\t\t\t       #     #####  # # #  #  #  #  # #    \n");
+    printf ("\t\t\t       #     #   #  #   #  #   # #  #  #   \n");
+    printf ("\t\t\t       #     #   #  #   #  #     #  #   #  \n\n");
+  
+    printf ("\t\t\t\t    #    #  ####   #   #            \n");
+    printf ("\t\t\t\t     #  #  #    #  #   #            \n");
+    printf ("\t\t\t\t       #   #    #  #   #            \n");
+    printf ("\t\t\t\t      #    #    #  #   #            \n");
+    printf ("\t\t\t\t     #      ####    ###            \n");
 }
 
 int resourceManager (int option, int addon)
