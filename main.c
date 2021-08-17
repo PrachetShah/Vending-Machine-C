@@ -53,9 +53,20 @@ again:
   if (resourceManager (option, addon))
     {
       totalMoney = calculate (option, addon);
-      // printf("\n\t\t\tResources available: %d %d %d %d %d",totalMilk,totalSugar,coffeePowder,teaPowder,chocolate);
+
+      int payment, extra;
+      printf ("\n\t\t\tBill:\n\t\t\tEnetr Rs. %d : ", totalMoney);
+      scanf("%d",&payment);
+      if (payment > totalMoney)
+        printf("\n\t\t\tPlease collect your change : Rs. %d",payment-totalMoney);
+      while(payment < totalMoney){
+        printf("\n\t\t\tYou payed less money! Your payent is : Rs. %d",payment);
+        printf("\n\t\t\tEnter Money Rs. %d : ",totalMoney-payment);
+        scanf("%d",&extra);
+        payment = payment + extra;
+      }
+
       int more;
-      printf ("\n\t\t\tEnter Rs. %d", totalMoney);
       printf ("\n\n\t\t\tDo you want to order again ? (Enter 1 for yes) : ");
       scanf ("%d", &more);
       if (more == 1)
@@ -97,35 +108,36 @@ void endLogo(){
     printf ("\t\t\t\t      |     ||     |         \n");
     printf ("\t\t\t\t      /     /\\     \\            \n");
     printf ("\t\t\t\t      =====    =====            \n");
-    printf ("\t\t\t\t    ======      ======            \n\n");
+    printf ("\t\t\t\t    ======      ======            \n\n\n");
     
-    printf ("\t\t\t████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗\n");
-    printf ("\t\t\t╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝\n");
-    printf ("\t\t\t   ██║   ███████║███████║██╔██╗ ██║█████╔╝ \n");
-    printf ("\t\t\t   ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗ \n");
-    printf ("\t\t\t   ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗\n");  
-    printf ("\t\t\t   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝\n\n");
-    printf ("\t\t\t        ██╗   ██╗ ██████╗ ██╗   ██╗        \n");
-    printf ("\t\t\t        ╚██╗ ██╔╝██╔═══██╗██║   ██║        \n");
-    printf ("\t\t\t         ╚████╔╝ ██║   ██║██║   ██║        \n");
-    printf ("\t\t\t          ╚██╔╝  ██║   ██║██║   ██║        \n");
-    printf ("\t\t\t           ██║   ╚██████╔╝╚██████╔╝        \n");
-    printf ("\t\t\t           ╚═╝    ╚═════╝  ╚═════╝         \n");
+
+    printf ("\t\t\t\t╔╦╗┬ ┬┌─┐┌┐┌┬┌─\n");
+    printf ("\t\t\t\t ║ ├─┤├─┤│││├┴┐\n");
+    printf ("\t\t\t\t ╩ ┴ ┴┴ ┴┘└┘┴ ┴ \n\n");
+    printf ("\t\t\t\t  ╦ ╦┌─┐┬ ┬   \n");
+    printf ("\t\t\t\t  ╚╦╝│ ││ │ \n");
+    printf ("\t\t\t\t   ╩ └─┘└─┘   \n\n");
+    printf ("\t\t\t\t  ╦  ╦┬┌─┐┬┌┬┐  \n");
+    printf ("\t\t\t\t  ╚╗╔╝│└─┐│ │   \n");
+    printf ("\t\t\t\t   ╚╝ ┴└─┘┴ ┴    \n");
+    printf ("\t\t\t\t  ╔═╗┌─┐┌─┐┬┌┐┌  ┬\n");
+    printf ("\t\t\t\t  ╠═╣│ ┬├─┤││││  │\n");
+    printf ("\t\t\t\t  ╩ ╩└─┘┴ ┴┴┘└┘  o\n");
 }
 
 int resourceManager (int option, int addon)
 {
     // Resources availabe:
-    static int totalMilk = 400;
-    static int totalSugar = 400;
-    static int coffeePowder = 400;
-    static int teaPowder = 400;
-    static int chocolate = 400;
-    // int totalMilk = 20000; // 20000 ml 
-    // int totalSugar = 10000; // 5000g 
-    // int coffeePowder = 10000; // 5000 g
-    // int teaPowder = 10000; // 5000 g
-    // int chocolate = 10000; // 2000 g
+    // static int totalMilk = 400;
+    // static int totalSugar = 400;
+    // static int coffeePowder = 400;
+    // static int teaPowder = 400;
+    // static int chocolate = 400;
+    int totalMilk = 20000; // 20000 ml 
+    int totalSugar = 10000; // 5000g 
+    int coffeePowder = 10000; // 5000 g
+    int teaPowder = 10000; // 5000 g
+    int chocolate = 10000; // 2000 g
     int milk[10] = { 0, 100, 150, 100, 200, 150, 150, 100, 100, 150 };
     int sugar[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
     int other[10] = { 0, 10, 15, 10, 20, 15, 15, 10, 10, 15 };
@@ -139,9 +151,9 @@ int resourceManager (int option, int addon)
     teaPowder = teaPowder - other[option];
     coffeePowder = teaPowder;
     chocolate = teaPowder;
-    printf ("\nmilk: %d\n", totalMilk);
-    printf ("sugar: %d\n", totalSugar);
-    printf ("other: %d\n", teaPowder);
+    // printf ("\nmilk: %d\n", totalMilk);
+    // printf ("sugar: %d\n", totalSugar);
+    // printf ("other: %d\n", teaPowder);
     if (totalMilk >= 0 && teaPowder >= 0 && coffeePowder >= 0 && chocolate >= 0
         && totalSugar > 0)
         return 1;
