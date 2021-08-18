@@ -96,7 +96,7 @@ void startLogo(){
   printf ("\t\t\t /--------------------------------------------------------------\\\n\n");
 }
 
-// function for monu card
+// function for menu card
 void menuLayout(){
   // printf ("\n\n\t\t\t!!! Welcome !!!\n");
   printf ("\t\t\tWhat would you like to have ?\n");
