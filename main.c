@@ -10,7 +10,7 @@ void endLogo();
 
 int main ()
 {
-  startLogo();
+  startLogo(); // welcome
 
   menuLayout();
 
@@ -40,22 +40,27 @@ int main ()
 
   printf("\n\t\t\t-----------------------------------------------");
 
+// check if enough resources are available before processing the order
   if (resourceManager (option, addon)) {      
+    // calculate bill
     totalMoney = calculate (option, addon);
     int payment, extra;
     printf ("\n\t\t\tBill:\n\t\t\tEnter Rs. %d : ", totalMoney);
-    scanf("%d",&payment);
+    scanf("%d",&payment); // ask for payment
     if (payment > totalMoney)
-      printf("\n\t\t\tPlease collect your change : Rs. %d",payment-totalMoney);
+      printf("\n\t\t\tPlease collect your change : Rs. %d",payment-totalMoney); // return extra change
     while(payment < totalMoney){
       printf("\n\t\t\tYou payed less money! Your payent is : Rs. %d",payment);
-      printf("\n\t\t\tEnter Money Rs. %d : ",totalMoney-payment);
+      printf("\n\t\t\tEnter Money Rs. %d : ",totalMoney-payment); // ask for more, as less money was payed
       scanf("%d",&extra);
       payment = payment + extra;
+      if(payment>totalMoney)
+        printf("\n\t\t\tPlease collect your change : Rs. %d",payment-totalMoney); // again return extra change
     }
 
     printf("\n\t\t\t-----------------------------------------------");
 
+    // for repeated ordering
     int more;
     printf ("\n\n\t\t\tDo you want to order again ? (Enter 1 for yes) : ");
     scanf ("%d", &more);
@@ -64,6 +69,7 @@ int main ()
     else
       goto end;
   }
+  // if resource manager returns 0 -> indicating resources out of stock
   else{
       printf("\n\n\t\t\tSorry! Required Ingredients have run out of stock!!!\n\t\t\tThe latest order can't be processed");
       goto end;
@@ -71,21 +77,28 @@ int main ()
 end:
     endLogo();
 }
-
+// starting ascii text
 void startLogo(){
-    printf ("\n\n");
-  printf ("\t\t     ,--''--.                                             \n");
-  printf ("\t\t   _r--------i          _                                    \n");
-  printf ("\t\t   \\         |-.      ,###.                                    \n");
-  printf ("\t\t    |        | |    ,-------.                                  \n");
-  printf ("\t\t    |        | |   c|       |              .----.          \n");
-  printf ("\t\t    |        |'     |       |             C|uuuu|         \n");
-  printf ("\t\t    |        |      |       |        ______|____|______   \n");
-  printf ("\t\t    (========)     ===========       \\________________/    \n");
+  printf ("\n\n");
+  printf ("\t\t         ,--''--.                                             \n");
+  printf ("\t\t       _r--------i          _                                    \n");
+  printf ("\t\t       \\         |-.      ,###.                                    \n");
+  printf ("\t\t        |        | |    ,-------.                                  \n");
+  printf ("\t\t        |        | |   c|       |              .----.          \n");
+  printf ("\t\t        |        |'     |       |             C|uuuu|         \n");
+  printf ("\t\t        |        |      |       |        ______|____|______   \n");
+  printf ("\t\t        (========)     ===========       \\________________/    \n\n");
+
+  printf ("\t\t\t \\--------------------------------------------------------------/\n");
+  printf ("\t\t\t !   | | |  |  |  |   __         __  __    __ __    __  | | |   ! \n");
+  printf ("\t\t\t !   | | |  |  |  |  |__   |    |   |  |  |  |  |  |__  | | |   !\n");
+  printf ("\t\t\t !   * * *  |__|__|  |__   |__  |__ |__|  |  |  |  |__  * * *   !\n");
+  printf ("\t\t\t /--------------------------------------------------------------\\\n\n");
 }
 
+// function for monu card
 void menuLayout(){
-  printf ("\n\n\t\t\t!!! Welcome !!!\n");
+  // printf ("\n\n\t\t\t!!! Welcome !!!\n");
   printf ("\t\t\tWhat would you like to have ?\n");
   printf ("\n\n\t\t\t\t\t MENU :\n");
   printf ("\t\t\t 1. Regular Tea \tRs. 20/-\n");
@@ -101,16 +114,10 @@ void menuLayout(){
 }
 
 
-
+// function that manages the resources
 int resourceManager (int option, int addon){
-  // Resources availabe:
-  // static int totalMilk = 400;
-  // static int totalSugar = 400;
-  // static int coffeePowder = 400;
-  // static int teaPowder = 400;
-  // static int chocolate = 400;
   int totalMilk = 20000; // 20000 ml 
-  int totalSugar = 10000; // 5000g 
+  int totalSugar = 10000; // 5000 g 
   int coffeePowder = 10000; // 5000 g
   int teaPowder = 10000; // 5000 g
   int chocolate = 10000; // 2000 g
@@ -127,9 +134,7 @@ int resourceManager (int option, int addon){
   teaPowder = teaPowder - other[option];
   coffeePowder = teaPowder;
   chocolate = teaPowder;
-  // printf ("\nmilk: %d\n", totalMilk);
-  // printf ("sugar: %d\n", totalSugar);
-  // printf ("other: %d\n", teaPowder);
+
   if (totalMilk >= 0 && teaPowder >= 0 && coffeePowder >= 0 && chocolate >= 0
       && totalSugar > 0)
       return 1;
@@ -137,6 +142,7 @@ int resourceManager (int option, int addon){
       return 0;
 }
 
+// function that calculates bill
 int calculate (int option, int addon){
   int prices[10] = { 0, 20, 30, 30, 50, 50, 45, 15, 20, 45 }, bill = 0;
   if (addon == 1) {
@@ -146,6 +152,7 @@ int calculate (int option, int addon){
   return bill;
 }
 
+// ending ascii text
 void endLogo(){
   printf ("\n\n\n");
   printf ("\t\t\t\t           __  __           \n");
@@ -160,20 +167,6 @@ void endLogo(){
   printf ("\t\t\t\t       =====    =====            \n");
   printf ("\t\t\t\t     ======      ======            \n\n\n");
   
-
-  // printf ("\t\t\t\t╔╦╗┬ ┬┌─┐┌┐┌┬┌─\n");
-  // printf ("\t\t\t\t ║ ├─┤├─┤│││├┴┐\n");
-  // printf ("\t\t\t\t ╩ ┴ ┴┴ ┴┘└┘┴ ┴ \n\n");
-  // printf ("\t\t\t\t  ╦ ╦┌─┐┬ ┬   \n");
-  // printf ("\t\t\t\t  ╚╦╝│ ││ │ \n");
-  // printf ("\t\t\t\t   ╩ └─┘└─┘   \n\n");
-  // printf ("\t\t\t\t  ╦  ╦┬┌─┐┬┌┬┐  \n");
-  // printf ("\t\t\t\t  ╚╗╔╝│└─┐│ │   \n");
-  // printf ("\t\t\t\t   ╚╝ ┴└─┘┴ ┴    \n");
-  // printf ("\t\t\t\t  ╔═╗┌─┐┌─┐┬┌┐┌  ┬\n");
-  // printf ("\t\t\t\t  ╠═╣│ ┬├─┤││││  │\n");
-  // printf ("\t\t\t\t  ╩ ╩└─┘┴ ┴┴┘└┘  o\n");
-
   printf ("\t\t\t     #######  #   #    #    #     #  #   #  \n");
   printf ("\t\t\t        #     #   #   # #   # #   #  #  #   \n");
   printf ("\t\t\t        #     #####  # # #  #  #  #  # #    \n");
