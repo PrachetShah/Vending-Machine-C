@@ -1,6 +1,6 @@
 # Vending-Machine-C
 
-Vending-Machine is a C project made for operating different Vending Machines.
+Vending-Machine is a Mini-C project made for operating different Vending Machines.
 
 ## Installation
 
