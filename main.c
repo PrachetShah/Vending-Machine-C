@@ -34,9 +34,9 @@ int main ()
     int totalMoney = 0;
 
     if (addon == 1)
-      printf ("\n\t\t\tYour order for is being processed with extra sugar");
+      printf ("\n\t\t\tYour order is being processed with extra sugar");
     else
-      printf ("\n\t\t\tYour order for is being processed");
+      printf ("\n\t\t\tYour order is being processed");
 
     printf("\n\t\t\t-----------------------------------------------");
 
