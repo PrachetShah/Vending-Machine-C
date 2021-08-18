@@ -125,7 +125,7 @@ void menuLayout(){
   printf ("\t\t\t 7. Cold Milk \t\tRs. 15/-\n");
   printf ("\t\t\t 8. Hot Milk \t\tRs. 20/-\n");
   printf ("\t\t\t 9. Hot Chocolate \tRs. 45/-\n\n");
-  printf ("\t\t\t Enter 0 to Exit \tRs. 45/-\n");
+  printf ("\t\t\t Enter 0 to Exit \n");
 }
 
 
