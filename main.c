@@ -70,6 +70,7 @@ int main ()
       // for repeated ordering
       int more;
       printf ("\n\n\t\t\tDo you want to order again ? (Enter 1 for yes) : ");
+      printf ("\n\n\t\t\totherwise enter any other character ");
       scanf ("%d", &more);
       if (more == 1)
         goto again;
