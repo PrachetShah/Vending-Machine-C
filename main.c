@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int calculate (int option, int addon);
 int resourceManager (int option, int addon);
